@@ -73,3 +73,35 @@ To install the required packages: pip install -r requrements.txt
 git add.
 git status
 git commit -m "Second Commit"
+git push -u origin main
+
+
+Create components folder under src and make a __init__.py file in it.
+NOTE: We created __init__.py file in it because components will be created as a package and it can be imported to someother file location.
+
+Components are nothing but the modules that i am going to use in my project BAsically for training the model.
+(Read Data, Split data)Data Ingestion is a part of the module to read the database or any path location of the file created under components : data_ingestion.py
+(All the transformation applied in the data): data_transformation.py
+(train the data): model_trainer.py
+
+
+Create Pipeline folder under src: __init__.py,
+train_pipeline.py (to trigger all the training components)
+predict_pipeline.py
+
+
+Now Create logger.py,
+exception.py under src (Source Folder) and also,
+utiles.py (Any functionallity that i am writing in a common way
+which will be used in the entire application Ex: Read the data from the Database,
+Create my mongodb client over here, code to save the model over a cloud.)
+
+
+Working on exception.py
+Error occured in python script name [{0}] line number [{1}] error message [{2}]
+
+Working on logger.py
+Log the error message by creating logging file in the current working directory.
+
+
+

@@ -1,7 +1,7 @@
 from setuptools import find_packages, setup
 from typing import List
 
-
+# Variable to remove "-e ." at the time of get_requirements only str should be pass
 HYPHEN_E_DOT = "-e ."
 
 def get_requirements(file_path:str)->List[str]:

@@ -1,0 +1,75 @@
+Create A Folder In Which The Project Will Be Created. And Also Create A New Github repository at the same time.
+Copy The Path and save it to path environmet like (Anaconda Promt)
+Type cd {Path Of The Project Folder}
+Sometimes Again Drive Name Like F: and hit Enter
+Type code . to open vs code instance in the same environment.
+Open A New Terminal
+Creat an environment by typing: conda create -p venv python==3.11 -y
+Clear The Screen Using cls
+Now Activate: conda activate venv/
+Now Clone Or Sync With Github Repository To Commit our code: git init, git add README.md, git commit -m "First commit"
+To see commit: git status
+git branch -M main
+git remote add origin https://github.com/MrMayank28/mlproject.git
+git remote -v
+git push -u origin main (To Push in git for first time you have to give the permission of the browser)
+Create A New File In The Github page with the name: .gitignore and hit commit changes button on github repository page.
+
+
+Now create setup.py file in vscode under the Project. 
+
+NOTE: setup.py is responsible in creating my ML application as a package and that can be install this package in your projects or i can use it.
+So with the help of setup.py I will able to build my entire ML application as a package and even deploy in Pypi
+and from there anybody can do the installation or anybody can also use it. That is why we use setup.py
+In Short: Building our application as a package itself.
+
+setup.py:
+
+from setuptools import find_packages, setup
+from typing import List
+
+# Variable to remove "-e ." at the time of get_requirements only str should be pass
+HYPHEN_E_DOT = "-e ."
+
+def get_requirements(file_path:str)->List[str]:
+    """
+    This function will return the list of requirements    
+    """
+
+    requirements = []
+    with open(file_path) as file_obj:
+        requirements = file_obj.readlines()
+        requirements = [req.replace("\n", "") for req in requirements]
+
+        if HYPHEN_E_DOT in requirements:
+            requirements.remove(HYPHEN_E_DOT)
+
+    return requirements
+
+setup(
+    name = 'mlproject',
+    version = '0.0.1',
+    auther ='Mayank',
+    author_email = 'rm.mayankb@gmail.com',
+    packages = find_packages(),
+    install_requires = get_requirements('requirements.txt')
+)
+
+
+Crate the folder src (Source) and the file with the name __init__.py in it.
+
+NOTE: It will directly consider src (Source) as a package itself. And it will try to build ML application.
+Once it builds right I can probably import this anywhere wherever I want like seaborn, pandas etc.
+
+
+Create requirements.txt for python libraries in which "-e ." should be used to trriger the setup.py
+Ex: pandas
+numpy
+seaborn
+# Automaticall Trigger the setup.py
+-e .
+
+To install the required packages: pip install -r requrements.txt
+git add.
+git status
+git commit -m "Second Commit"

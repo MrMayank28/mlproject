@@ -69,7 +69,7 @@ seaborn
 # Automaticall Trigger the setup.py
 -e .
 
-To install the required packages: pip install -r requrements.txt
+To install the required packages: pip install -r requirements.txt
 git add.
 git status
 git commit -m "Second Commit"
@@ -103,5 +103,8 @@ Error occured in python script name [{0}] line number [{1}] error message [{2}]
 Working on logger.py
 Log the error message by creating logging file in the current working directory.
 
+-----------------------------------
 
+Perform EDA by making ipynb(jupyter extension file) under data folder for EDA and model training.
+data_ingestion.py to save (Any Input that is required for further use) like test data, train data, raw data
 

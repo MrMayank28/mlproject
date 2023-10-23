@@ -1,6 +1,12 @@
 pandas
 numpy
 seaborn
+matplotlib
+seaborn
+scikit-learn
+catboost
+xgboost
+Flask
 
 # Automaticall Trigger the setup.py
 -e .

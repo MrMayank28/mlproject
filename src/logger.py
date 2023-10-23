@@ -2,22 +2,24 @@ import logging
 import os
 from datetime import datetime
 
-# OLD Code
+
+# # OLD CODE
+
+# # Create the "logs" directory if it doesn't exist
+# logs_directory = os.path.join(os.getcwd(), "logs")
+# os.makedirs(logs_directory, exist_ok=True)
 
 # LOG_FILE = f"{datetime.now().strftime('%m_%d_%Y_%H_%M_%S')}.log"
-# # Creates Logs file in the current working directory
-# logs_path = os.path.join(os.getcwd(), "logs", LOG_FILE)
-# os.makedirs(logs_path, exist_ok=True)
-# LOG_FILE_PATH = os.path.join(logs_path, LOG_FILE)
+# LOG_FILE_PATH = os.path.join(logs_directory, LOG_FILE)
 
-# UPDATED CODE
-
-# Create the "logs" directory if it doesn't exist
-logs_directory = os.path.join(os.getcwd(), "logs")
-os.makedirs(logs_directory, exist_ok=True)
+# OLD Code
 
 LOG_FILE = f"{datetime.now().strftime('%m_%d_%Y_%H_%M_%S')}.log"
-LOG_FILE_PATH = os.path.join(logs_directory, LOG_FILE)
+
+# Creates Logs file in the current working directory
+logs_path = os.path.join(os.getcwd(), "logs", LOG_FILE)
+os.makedirs(logs_path, exist_ok=True)
+LOG_FILE_PATH = os.path.join(logs_path, LOG_FILE)
 
 logging.basicConfig(
     filename=LOG_FILE_PATH,

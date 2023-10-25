@@ -110,3 +110,7 @@ data_ingestion.py to save (Any Input that is required for further use) like test
 data_transformation.py To transform the data
 Utils.py to save the path of the Preprocessor Object For Data Transformation.
 
+------------------------------------
+Now Creating Our Web application
+Create a app.py file in the root folder
+
